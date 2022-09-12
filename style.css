@@ -13,10 +13,10 @@ nav{
     background: #B5D9E8;
     align-items: center;
     padding: 15px;
-    border-right: 1px solid 
+    border-right: 1px solid rgb(52, 52, 206);
 }
 main {
-    margin-left: 250px;
+    margin-left: 300px;
     padding: 10px;
 
 }
