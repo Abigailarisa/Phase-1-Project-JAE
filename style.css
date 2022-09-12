@@ -2,6 +2,7 @@ body {
     background-image: url("https://www.kennythepirate.com/wp-content/uploads/2021/10/Crop-for-Feature.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 nav{
     position: fixed;
@@ -10,6 +11,9 @@ nav{
     width: 250px;
     height: 100%;
     background: #B5D9E8;
+    align-items: center;
+    padding: 15px;
+    border-right: 1px solid 
 }
 main {
     margin-left: 250px;
