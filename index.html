@@ -1,13 +1,36 @@
-<!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css"/>
-        <img src="https://www.dropbox.com/s/uqsqjjxfz97cpx0/a633054ef31530600d0d3345af2b056c.png?dl=0">
-    </head>
-    <body>
+</html>
+<html>
+  <head>
+    <title>Flatacuties</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <h1>Flatacuties</h1>
+    </div>
 
-    </body>
+    <div id="character-bar">
+      <!-- show characters names here -->
+    </div>
 
+    <div class="characterInfo">
+      <div id="detailed-info">
+        <p id="name">Character's Name</p>
+        <img
+          id="image"
+          src="assets/dummy.gif"
+          alt="Character's Name"
+        /><!-- display character image here -->
+        <h4>Total Votes: <span id="vote-count">Character's Votes</span></h4>
+        <form id="votes-form">
+          <input type="text" placeholder="Enter Votes" id="votes" name="votes" />
+          <input type="submit" value="Add Votes" />
+        </form>
+        <button id="reset-btn">Reset Votes</button>
+      </div>
 
+    </div>
+    <script src="src/index.js"></script>
+  </body>
 </html>
