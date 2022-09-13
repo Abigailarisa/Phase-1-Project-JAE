@@ -37,3 +37,10 @@ main {
     max-height: 20%;
     max-width: 20%;
 }
+
+#dislike-count{
+    color: red
+}
+#like-count{
+    color: rgb(3, 196, 3)
+}
