@@ -1,7 +1,10 @@
-fetch('https://api.disneyapi.dev/characters')
+function pullCharacters(id){
+fetch(`https://api.disneyapi.dev/characters/${id}`)
 .then(res => res.json())
-.then(characters => characters.data.forEach(character => renderCharacters(character)))
-//.catch(e => console.error)
+.then(characters =>  renderCharacters(characters))
+}
+pullCharacters('6160')
+
 
 function renderCharacters(character){
     const charBar = document.querySelector('#character-bar');
@@ -9,4 +12,5 @@ function renderCharacters(character){
     spanName.textContent = character.name;
     //console.log(character)
     charBar.append(spanName);
+
 }
