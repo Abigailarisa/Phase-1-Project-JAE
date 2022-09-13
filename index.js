@@ -24,7 +24,7 @@ function pullCharacters(id){
     charCard.append(imgObj, media);
     
     function renderCharacters(character){
-        console.log(character)
+        //console.log(character)
         const charBar = document.querySelector('#character-bar');
         const spanName = document.createElement('span');
         spanName.textContent = character.name;
@@ -83,7 +83,7 @@ function pullCharacters(id){
         filterButton.addEventListener('click', () => {
             if (filterButton.textContent === 'Filter Off'){
                 filterButton.textContent = 'Filter On';
-                console.log(characterObj)
+                //console.log(characterObj)
                 return media.textContent = characterObj.films
             } else {
                 filterButton.textContent = 'Filter Off'
