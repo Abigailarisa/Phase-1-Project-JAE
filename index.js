@@ -13,8 +13,8 @@ pullCharacters('4278')
 
 
 const charName = document.querySelector('#char-name');
-const voteLikes = document.querySelector('#like-count');
-const voteDislikes = document.querySelector('#dislike-count');
+const voteLikes = document.querySelector('#like-button');
+const voteDislikes = document.querySelector('#dislike-button');
 const charCard = document.querySelector('#character-info');
 const imgObj = document.createElement('img');
 imgObj.id = "character-image"
