@@ -22,6 +22,7 @@ function pullCharacters(id){
     charCard.append(imgObj);
     
     function renderCharacters(character){
+        console.log(character)
         const charBar = document.querySelector('#character-bar');
         const spanName = document.createElement('span');
         spanName.textContent = character.name;
@@ -44,7 +45,7 @@ function pullCharacters(id){
             dislikesCount.textContent = characterObj.dislikes
     
         })
-        
+         filterChar(characterObj);
     }
     function handleLikes(){
         voteLikes.addEventListener('click', () => {
@@ -75,11 +76,14 @@ function pullCharacters(id){
         })
     }
 
-    function filterChar(){
+    function filterChar(characterObj){
         const filterButton = document.querySelector('#anime-or-live-action');
+        const media = document.createElement('span')
         filterButton.addEventListener('click', () => {
             if (filterButton.textContent === 'Filter Off'){
-                filterButton.textContent = 'Filter On'
+                filterButton.textContent = 'Filter On';
+                media.append(characterObj.films)
+                //console.log(media)
             } else {
                 filterButton.textContent = 'Filter Off'
             }
@@ -88,4 +92,4 @@ function pullCharacters(id){
     handleLikes();
     handleDislikes();
     handleNewCharForm();
-    filterChar();
+   
