@@ -53,7 +53,7 @@ function pullCharacters(id){
     }
     
     function handleDislikes(){
-            voteDislikes.addEventListener('click', () => {
+        voteDislikes.addEventListener('click', () => {
             dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
         })
     }
