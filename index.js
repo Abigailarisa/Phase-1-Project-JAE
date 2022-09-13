@@ -74,6 +74,18 @@ function pullCharacters(id){
         renderCharacters(newChar)
         })
     }
+
+    function filterChar(){
+        const filterButton = document.querySelector('#anime-or-live-action');
+        filterButton.addEventListener('click', () => {
+            if (filterButton.textContent === 'Filter Off'){
+                filterButton.textContent = 'Filter On'
+            } else {
+                filterButton.textContent = 'Filter Off'
+            }
+        })
+    }
     handleLikes();
     handleDislikes();
     handleNewCharForm();
+    filterChar();
