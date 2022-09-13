@@ -27,12 +27,7 @@ function renderCharacters(character){
     const spanName = document.createElement('span');
     spanName.textContent = character.name;
     charBar.append(spanName);
-    
-    //console.log(characterObj.name)
-
-    spanName.addEventListener('click', () => {
-        charName.textContent = character.name;
-        const characterObj = {
+    const characterObj = {
             name: character.name,
             image: character.imageUrl,
             likes: 0,
@@ -41,8 +36,13 @@ function renderCharacters(character){
             tvShows: character.tvShows,
             videoGames: character.videoGames
         }
+    //console.log(characterObj.name)
 
+    spanName.addEventListener('click', () => {
+        charName.textContent = characterObj.name;
         imgObj.src = characterObj.image;
+        likesCount.textContent = characterObj.likes
+        dislikesCount.textContent = characterObj.dislikes
 
     voteLikes.addEventListener('click', () => {
         likesCount.textContent = parseInt(likesCount.textContent) + 1;
