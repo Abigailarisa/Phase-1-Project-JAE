@@ -16,6 +16,8 @@ const charName = document.querySelector('#char-name');
 const voteLikes = document.querySelector('#like-count');
 const voteDislikes = document.querySelector('#dislike-count');
 const charCard = document.querySelector('#character-info');
+const imgObj = document.createElement('img');
+charCard.append(imgObj);
 
 function renderCharacters(character){
     const charBar = document.querySelector('#character-bar');
@@ -36,8 +38,7 @@ function renderCharacters(character){
             tvShows: character.tvShows,
             videoGames: character.videoGames
         }
-        const imgObj = document.createElement('img');
         imgObj.src = characterObj.image;
-        charCard.append(imgObj);
+
     })
 }
