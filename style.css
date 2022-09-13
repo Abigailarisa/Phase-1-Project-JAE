@@ -25,3 +25,11 @@ main {
     background: white;
     padding: 5px;
 }
+#character-bar span {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3em;
+    border: 1px solid rgb(255, 255, 255);
+  }
