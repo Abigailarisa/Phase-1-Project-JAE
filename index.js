@@ -44,13 +44,19 @@ function renderCharacters(character){
         likesCount.textContent = characterObj.likes
         dislikesCount.textContent = characterObj.dislikes
 
-    voteLikes.addEventListener('click', () => {
-        likesCount.textContent = parseInt(likesCount.textContent) + 1;
-    })
-
-    voteDislikes.addEventListener('click', () => {
-        dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-    })
     })
     
 }
+function handleLikes(){
+    voteLikes.addEventListener('click', () => {
+        likesCount.textContent = parseInt(likesCount.textContent) + 1;
+    })
+}
+
+function handleDislikes(){
+        voteDislikes.addEventListener('click', () => {
+        dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
+    })
+}
+handleLikes();
+handleDislikes()
