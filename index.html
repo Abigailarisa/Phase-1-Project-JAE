@@ -1,36 +1,38 @@
-
-</html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <title>Flatacuties</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8">
+    <title>DISNEY</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" defer src="index.js"></script>
+    <link rel="shortcut icon">
   </head>
   <body>
-    <div class="logo">
-      <h1>Flatacuties</h1>
+    <div id="filter-div">
+      <button id="disney-or-pixar">Filter Off</button>
     </div>
-
     <div id="character-bar">
-      <!-- show characters names here -->
-    </div>
 
-    <div class="characterInfo">
-      <div id="detailed-info">
-        <p id="name">Character's Name</p>
-        <img
-          id="image"
-          src="assets/dummy.gif"
-          alt="Character's Name"
-        /><!-- display character image here -->
-        <h4>Total Votes: <span id="vote-count">Character's Votes</span></h4>
-        <form id="votes-form">
-          <input type="text" placeholder="Enter Votes" id="votes" name="votes" />
-          <input type="submit" value="Add Votes" />
-        </form>
-        <button id="reset-btn">Reset Votes</button>
+    </div>
+    <div id="character-summary-container">
+      <h1>Character:</h1>
+      <div id="character-info">
+        
       </div>
-
+      <h4>Total Likes <span id ="like-count">Put Likes Here</span></h4>
+      <h5>Total Dislikes <span id="dislike-count">Put Dislikes Here</span></h5>
+      <h4>Add New Character</h4>
+      <form id="character-form">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div>
+          <label for="image-url">Image URL</label>
+          <input type="text" id="image-url" name="image-url" />
+        </div>
+        <input type="submit" value="Add Character" />
+      </form> 
     </div>
-    <script src="src/index.js"></script>
   </body>
 </html>

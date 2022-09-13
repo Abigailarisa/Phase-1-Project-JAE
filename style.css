@@ -2,4 +2,25 @@ body {
     background-image: url("https://www.kennythepirate.com/wp-content/uploads/2021/10/Crop-for-Feature.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 300px;
+
+}
+#character-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #B5D9E8;
+    align-items: center;
+    padding: 15px;
+    border-right: 1px solid rgb(52, 52, 206);
+}
+main {
+    margin-left: 300px;
+    padding: 10px;
+
+}
+#character-summary-container {
+    background: white;
 }
