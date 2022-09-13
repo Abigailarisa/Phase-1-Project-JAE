@@ -44,31 +44,19 @@ function pullCharacters(id){
             likesCount.textContent = characterObj.likes
             dislikesCount.textContent = characterObj.dislikes
     
-        voteLikes.addEventListener('click', () => {
-            likesCount.textContent = parseInt(likesCount.textContent) + 1;
-        })
-    
-        voteDislikes.addEventListener('click', () => {
-            dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-        })
         })
         
     }
-
-function handleNewCharForm(){
-    const charForm = document.querySelector('#character-form')
-    charForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const newName = e.target['name'].value;
-        const newImg = e.target['image-url'].value;
-        let newChar = {
-            name: newName,
-            image: newImg,
-            likes: 0,
-            dislikes: 0
-        }
-        console.log(newName)
-    renderCharacters(newChar)
-    })
-}
-handleNewCharForm()
+    function handleLikes(){
+        voteLikes.addEventListener('click', () => {
+            likesCount.textContent = parseInt(likesCount.textContent) + 1;
+        })
+    }
+    
+    function handleDislikes(){
+            voteDislikes.addEventListener('click', () => {
+            dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
+        })
+    }
+    handleLikes();
+    handleDislikes();
