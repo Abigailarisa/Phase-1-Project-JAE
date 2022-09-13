@@ -34,6 +34,6 @@ main {
     border: 1px solid rgb(255, 255, 255);
   }
 #character-image {
-    max-height: 40%;
-    max-width: 40%;
+    max-height: 20%;
+    max-width: 20%;
 }
