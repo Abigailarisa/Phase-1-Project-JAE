@@ -58,5 +58,23 @@ function handleDislikes(){
         dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
     })
 }
+function handleNewCharForm(){
+    const charForm = document.querySelector('#character-form')
+    charForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newName = e.target['name'].value;
+        const newImg = e.target['image-url'].value;
+        let newChar = {
+            name: newName,
+            image: newImg,
+            likes: 0,
+            dislikes: 0
+        }
+        console.log(newName)
+    renderCharacters(newChar)
+    })
+}
+
 handleLikes();
-handleDislikes()
+handleDislikes();
+handleNewCharForm();
