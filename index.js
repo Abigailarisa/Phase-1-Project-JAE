@@ -4,11 +4,12 @@ fetch(`https://api.disneyapi.dev/characters/${id}`)
 .then(characters =>  renderCharacters(characters))
 }
 pullCharacters('6160')
-pullCharacters('6000')
-pullCharacters('5080')
-pullCharacters('7088')
-pullCharacters('4408')
-pullCharacters('2267')
+pullCharacters('6448')
+pullCharacters('4244')
+pullCharacters('1870')
+pullCharacters('4400')
+pullCharacters('4282')
+pullCharacters('4278')
 
 
 const charName = document.querySelector('#char-name');
