@@ -11,41 +11,6 @@ function pullCharacters(id){
     pullCharacters('4282')
     pullCharacters('4278')
     
-<<<<<<< HEAD
-}
-function handleLikes(){
-    voteLikes.addEventListener('click', () => {
-        likesCount.textContent = parseInt(likesCount.textContent) + 1;
-    })
-}
-
-function handleDislikes(){
-        voteDislikes.addEventListener('click', () => {
-        dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-    })
-}
-function handleNewCharForm(){
-    const charForm = document.querySelector('#character-form')
-    charForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const newName = e.target['name'].value;
-        const newImg = e.target['image-url'].value;
-        let newChar = {
-            name: newName,
-            image: newImg,
-            likes: 0,
-            dislikes: 0
-        }
-        console.log(newName)
-    renderCharacters(newChar)
-    })
-}
-
-handleLikes();
-handleDislikes();
-handleNewCharForm();
-=======
-    
     const charName = document.querySelector('#char-name');
     const voteLikes = document.querySelector('#like-button');
     const voteDislikes = document.querySelector('#dislike-button');
@@ -92,6 +57,23 @@ handleNewCharForm();
             dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
         })
     }
+
+    function handleNewCharForm(){
+        const charForm = document.querySelector('#character-form')
+        charForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newName = e.target['name'].value;
+            const newImg = e.target['image-url'].value;
+            let newChar = {
+                name: newName,
+                image: newImg,
+                likes: 0,
+                dislikes: 0
+            }
+            console.log(newName)
+        renderCharacters(newChar)
+        })
+    }
     handleLikes();
     handleDislikes();
->>>>>>> 78ca45d604f3bfb7ca3b2a5482ebfaa54256ad33
+    handleNewCharForm();
