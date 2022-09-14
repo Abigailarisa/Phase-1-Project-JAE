@@ -44,3 +44,21 @@ main {
 #like-count{
     color: rgb(3, 196, 3)
 }
+#movie{
+    font-size: 15px
+}
+#tv-shows{
+    font-size: 15px
+}
+#video-games{
+    font-size: 15px
+}
+#nostalgia{
+    font-size: 15px
+}
+.media-name{
+    font-size: 25px
+}
+h2{
+    font-size: 30px
+}

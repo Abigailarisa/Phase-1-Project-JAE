@@ -6,7 +6,11 @@ const likesCount = document.querySelector("#like-count");
 const dislikesCount = document.querySelector("#dislike-count");
 const charCard = document.querySelector("#character-info");
 const toggleButton = document.querySelector("#anime-or-live-action");
-const h2 = document.querySelector('#test');
+const media = document.querySelector('.media-title');
+const movie = document.querySelector("#movie");
+const tv = document.querySelector("#tv-shows");
+const videoGame = document.querySelector("#video-games");
+const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
@@ -28,22 +32,28 @@ function renCharCard(char){
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
-        const characterObj = {
-        likes: 0,
-        dislikes: 0,
-        films: char.films,
-        tvShows: char.tvShows,
-        videoGames: char.videoGames,
-        };
-        spanName.addEventListener("click", () => {
-        charName.textContent = char.name;
-        imgObj.src = char.imageUrl;
-        imgObj.style.display = 'none';
-        imgObj.style.display = '';
-        likesCount.textContent = characterObj.likes;
-        dislikesCount.textContent = characterObj.dislikes;
-        });
-}
+    const characterObj = {
+      id: char._id,
+      likes: 0,
+      dislikes: 0,
+      films: char.films,
+      tvShows: char.tvShows,
+      videoGames: char.videoGames,
+    };
+    console.log(characterObj.id)
+    spanName.addEventListener("click", () => {
+      charName.textContent = char.name;
+      imgObj.src = char.imageUrl;
+      imgObj.style.display = 'none';
+      imgObj.style.display = '';
+      likesCount.textContent = characterObj.likes;
+      dislikesCount.textContent = characterObj.dislikes;
+      movie.textContent = characterObj.films.join(', ');
+      tv.textContent = characterObj.tvShows.join(', ');
+      videoGame.textContent = characterObj.videoGames.join(', ');
+    });
+  }
+
 
 function handleLikes() {
   voteLikes.addEventListener("click", () => {
@@ -74,20 +84,20 @@ function handleNewCharForm() {
 }
 
 toggleButton.addEventListener('click', () => {
-    if (h2.style.display !== 'none') {
-        h2.style.display = 'none'
+    if (media.style.display !== 'none') {
+        media.style.display = 'none'
     } else {
-        h2.style.display = ''
+        media.style.display = ''
     }
 })
 
 function toggleMedia() {
   const filterButton = document.querySelector("#anime-or-live-action");
   filterButton.addEventListener("click", () => {
-    if (filterButton.textContent === "Filter Off") {
-      filterButton.textContent = "Filter On";
+    if (filterButton.textContent === "Less Information") {
+      filterButton.textContent = "More Information ";
     } else {
-      filterButton.textContent = "Filter Off";
+      filterButton.textContent = "Less Information";
     }
   });
 }
