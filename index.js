@@ -14,6 +14,7 @@ const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
+const postRoute = require("./routes/posts");
 
 
 fetch("https://api.disneyapi.dev/characters?page=128")
