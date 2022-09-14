@@ -14,7 +14,6 @@ const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
-const postRoute = require("./routes/posts");
 
 
 fetch("https://api.disneyapi.dev/characters?page=128")
@@ -41,6 +40,7 @@ function renCharCard(char){
       tvShows: char.tvShows,
       videoGames: char.videoGames,
     };
+    console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
       imgObj.src = char.imageUrl;
@@ -51,46 +51,19 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
-
-      handleLikes(characterObj);
-      handleDislikes(characterObj);
     });
   }
 
-function handleLikes(char) {
+
+function handleLikes() {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
-
-    fetch(`http://localhost:3000/characters/${char.id}`,{
-      method: 'PATCH', 
-      headers:{
-        'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        likes: parseInt(likesCount.textContent)
-      })
-    })
-    .then(res => res.json)
-    .then(likes => console.log(likes))
   });
 }
 
-function handleDislikes(char) {
+function handleDislikes() {
   voteDislikes.addEventListener("click", () => {
     dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-    fetch(`http://localhost:3000/characters/${char.id}`,{
-      method: 'PATCH', 
-      headers:{
-        'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        dislikes: parseInt(dislikesCount.textContent)
-      })
-    })
-    .then(res => res.json)
-    .then(dislikes => console.log(dislikes))
   });
 }
 
@@ -105,23 +78,10 @@ function handleNewCharForm() {
       image: newImg,
       likes: 0,
       dislikes: 0,
-      films: [],
-      tvShows: [],
-      videoGames: []
     };
-    
-    fetch('http://localhost:3000/characters',{
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json',
-         Accept: "application/json"
-       },
-      body: JSON.stringify(newChar)
-      })
-      .then(res => res.json())
-      .then(char => renCharCard(char))
-  })
-  }
+    renCharCard(newChar)
+  });
+}
 
 toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
@@ -141,6 +101,7 @@ function toggleMedia() {
     }
   });
 }
-
+handleLikes();
+handleDislikes();
 handleNewCharForm();
 toggleMedia();
