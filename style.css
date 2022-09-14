@@ -44,21 +44,67 @@ main {
 #like-count{
     color: rgb(3, 196, 3)
 }
-#movie{
-    font-size: 15px
+
+
+body {
+    background-image: url("disney\ image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 300px;
+
 }
-#tv-shows{
-    font-size: 15px
+#character-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #B5D9E8;
+    align-items: center;
+    padding: 15px;
+    border-right: 1px solid rgb(52, 52, 206);
 }
-#video-games{
-    font-size: 15px
+main {
+    margin-left: 300px;
+    padding: 10px;
+
 }
-#nostalgia{
+#character-summary-container {
+    background: white;
+    padding: 5px;
+    margin-right: 35%;
+
+}
+#character-bar span {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3em;
+    border: 1px solid rgb(255, 255, 255);
+  }
+#character-image {
+    max-height: 20%;
+    max-width: 20%;
+}
+
+
+
+
+
+.inner-text{
     font-size: 15px
 }
 .media-name{
     font-size: 25px
 }
+
+
+
+
+
+
+
 h2{
     font-size: 30px
 }
