@@ -1,4 +1,8 @@
 
+fetch("https://api.disneyapi.dev/characters?page=128")
+  .then((res) => res.json())
+  .then((char) => renChar(char));
+
 const charName = document.querySelector("#char-name");
 const voteLikes = document.querySelector("#like-button");
 const voteDislikes = document.querySelector("#dislike-button");
@@ -11,38 +15,33 @@ const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
 
-
-fetch("https://api.disneyapi.dev/characters?page=128")
-  .then((res) => res.json())
-  .then((char) => renChar(char));
-
 function renChar(chars) {
-    //console.log(chars)
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
+    renCharCard(char);
+  });   
+}
+
+function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
-    const characterObj = {
-      name: char.name,
-      image: char.imageUrl,
-      likes: 0,
-      dislikes: 0,
-      films: char.films,
-      tvShows: char.tvShows,
-      videoGames: char.videoGames,
-    };
-    spanName.addEventListener("click", () => {
-      charName.textContent = characterObj.name;
-      imgObj.src = characterObj.image;
-      imgObj.style.display = 'none';
-      imgObj.style.display = '';
-      likesCount.textContent = characterObj.likes;
-      dislikesCount.textContent = characterObj.dislikes;
-    });
-  });
-       
+        const characterObj = {
+        likes: 0,
+        dislikes: 0,
+        films: char.films,
+        tvShows: char.tvShows,
+        videoGames: char.videoGames,
+        };
+        spanName.addEventListener("click", () => {
+        charName.textContent = char.name;
+        imgObj.src = char.imageUrl;
+        imgObj.style.display = 'none';
+        imgObj.style.display = '';
+        likesCount.textContent = characterObj.likes;
+        dislikesCount.textContent = characterObj.dislikes;
+        });
 }
 
 function handleLikes() {
@@ -69,8 +68,7 @@ function handleNewCharForm() {
       likes: 0,
       dislikes: 0,
     };
-    // console.log(newName)
-    renChar(newChar);
+    renCharCard(newChar)
   });
 }
 
