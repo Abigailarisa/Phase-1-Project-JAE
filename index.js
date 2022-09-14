@@ -20,6 +20,14 @@ fetch("https://api.disneyapi.dev/characters?page=128")
   .then((res) => res.json())
   .then((char) => renChar(char));
 
+// fetch("http://localhost:3000/characters")
+//   .then((res) => res.json())
+//   .then( char => {
+//     handleLikes(char)
+//     handleDislikes(char)
+//     renCharCard(char)
+//   })
+
 function renChar(chars) {
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
@@ -51,8 +59,8 @@ function renCharCard(char){
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
 
-      handleLikes(characterObj);
-      handleDislikes(characterObj);
+      // handleLikes(characterObj);
+      // handleDislikes(characterObj);
     }); 
   }
 
@@ -60,36 +68,37 @@ function handleLikes(char) {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
 
-    fetch(`http://localhost:3000/characters/${char.id}`,{
-      method: 'PATCH', 
-      headers:{
-        'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        likes: parseInt(likesCount.textContent)
-      })
-    })
-    .then(res => res.json)
-    .then(likes => console.log(likes))
+    // fetch(`http://localhost:3000/characters/${char.id}`,{
+    //   method: 'PATCH', 
+    //   headers:{
+    //     'Content-Type': 'application/json',
+    //     Accept: "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     likes: parseInt(likesCount.textContent)
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(likes => console.log(likes))
   });
 }
 
 function handleDislikes(char) {
   voteDislikes.addEventListener("click", () => {
     dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-    fetch(`http://localhost:3000/characters/${char.id}`,{
-      method: 'PATCH', 
-      headers:{
-        'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        dislikes: parseInt(dislikesCount.textContent)
-      })
-    })
-    .then(res => res.json)
-    .then(dislikes => console.log(dislikes))
+
+    // fetch(`http://localhost:3000/characters/${char.id}`,{
+    //   method: 'PATCH', 
+    //   headers:{
+    //     'Content-Type': 'application/json',
+    //     Accept: "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     dislikes: parseInt(dislikesCount.textContent)
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(dislikes => console.log(dislikes))
   });
 }
 
@@ -108,17 +117,17 @@ function handleNewCharForm() {
       tvShows: [],
       videoGames: []
     };
-    
-    fetch('http://localhost:3000/characters',{
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json',
-         Accept: "application/json"
-       },
-      body: JSON.stringify(newChar)
-      })
-      .then(res => res.json())
-      .then(char => renCharCard(char))
+    renCharCard(newChar)
+    // fetch('http://localhost:3000/characters',{
+    //   method: 'POST',
+    //   headers:{
+    //     'Content-Type': 'application/json',
+    //      Accept: "application/json"
+    //    },
+    //   body: JSON.stringify(newChar)
+    //   })
+    //   .then(res => res.json())
+    //   .then(char => renCharCard(char))
   })
   }
 
@@ -140,6 +149,7 @@ function toggleMedia() {
     }
   });
 }
-
+handleDislikes();
+handleLikes();
 handleNewCharForm();
 toggleMedia();

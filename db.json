@@ -2,13 +2,13 @@
   "characters": [
     {
       "id": 6446,
-      "likes": 0,
-      "dislikes": 0
+      "likes": 3,
+      "dislikes": -3
     },
     {
       "id": 6447,
-      "likes": 3,
-      "dislikes": 0
+      "likes": 2,
+      "dislikes": -2
     },
     {
       "id": 6448,
@@ -22,18 +22,58 @@
     },
     {
       "id": 6450,
-      "likes": 2,
+      "likes": 3,
       "dislikes": -2
     },
     {
       "id": 6451,
-      "likes": 0,
-      "dislikes": 0
+      "likes": 2,
+      "dislikes": -2
     },
     {
       "id": 6452,
       "likes": 0,
       "dislikes": 0
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "likes": 0,
+      "dislikes": 0,
+      "films": [],
+      "tvShows": [],
+      "videoGames": [],
+      "id": 6453
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "likes": 0,
+      "dislikes": 0,
+      "films": [],
+      "tvShows": [],
+      "videoGames": [],
+      "id": 6454
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "likes": 0,
+      "dislikes": 0,
+      "films": [],
+      "tvShows": [],
+      "videoGames": [],
+      "id": 6455
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "likes": 0,
+      "dislikes": 0,
+      "films": [],
+      "tvShows": [],
+      "videoGames": [],
+      "id": 6456
     }
   ]
 }
