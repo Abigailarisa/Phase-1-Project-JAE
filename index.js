@@ -23,7 +23,7 @@ fetch("https://api.disneyapi.dev/characters?page=128")
 function renChar(chars) {
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
-    renCharCard(char);
+    renCharCard(char); 
   });   
 }
 
@@ -53,7 +53,7 @@ function renCharCard(char){
 
       handleLikes(characterObj);
       handleDislikes(characterObj);
-    });
+    }); 
   }
 
 function handleLikes(char) {
