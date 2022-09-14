@@ -7,6 +7,10 @@ const dislikesCount = document.querySelector("#dislike-count");
 const charCard = document.querySelector("#character-info");
 const toggleButton = document.querySelector("#anime-or-live-action");
 const h2 = document.querySelector('#media');
+const movie = document.querySelector("#movie");
+const tv = document.querySelector("#tv-shows");
+const videoGame = document.querySelector("#video-games");
+const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
@@ -44,6 +48,9 @@ function renCharCard(char){
       imgObj.style.display = '';
       likesCount.textContent = characterObj.likes;
       dislikesCount.textContent = characterObj.dislikes;
+      movie.textContent = characterObj.films;
+      tv.textContent = characterObj.tvShows;
+      videoGame.textContent = characterObj.videoGames;
     });
   }
 
