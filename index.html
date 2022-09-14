@@ -8,8 +8,11 @@
     <link rel="shortcut icon">
   </head>
   <body>
+    <header>
+        <img src="a633054ef31530600d0d3345af2b056c.png" alt="Down Memory Lane" height="84">
+    </header>
     <div id="filter-div">
-      <button id="disney-or-pixar">Filter Off</button>
+      <button id="anime-or-live-action">Filter Off</button>
     </div>
     <div id="character-bar">
 
@@ -17,16 +20,11 @@
     <div id="character-summary-container">
       <h1> Character: <span id="char-name">Character's Name Here</span></h1>
       <div id="character-info">
-        
+
       </div>
-<<<<<<< HEAD
-      <h4>Total Likes <span id ="like-count">Put Likes Here </span></h4>
-      <h5>Total Dislikes <span id="dislike-count">Put Dislikes Here </span></h5>
-=======
-      <span id ="like-count">Put Likes Here</span><button>Total Likes</button>
+      <span id ="like-count"> 0 </span><button id ="like-button">Total Likes</button>
       <br>
-      <span id="dislike-count">Put Dislikes Here</span><button>Total Dislikes </button>
->>>>>>> 53363c4db45f87c2f81c815c7786deb975fd73e5
+      <span id="dislike-count"> 0 </span><button id ="dislike-button">Total Dislikes</button>
       <h4>Add New Character</h4>
       <form id="character-form">
         <div>
@@ -37,8 +35,13 @@
           <label for="image-url">Image URL</label>
           <input type="text" id="image-url" name="image-url" />
         </div>
+        <div>
+            <label for="comment">Nostalgia Moment</label>
+            <input type="text" id="comment" name="comment" />
+        </div>
         <input type="submit" value="Add Character" />
-      </form> 
+      </form>
+      <h2 id = "test">test</h2>
     </div>
   </body>
 </html>
