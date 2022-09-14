@@ -39,9 +39,11 @@ main {
 }
 
 #dislike-count{
+    font-size: 30px;
     color: red
 }
 #like-count{
+    font-size: 30px;
     color: rgb(0, 146, 0)
 }
 
@@ -62,10 +64,10 @@ body {
     left: 0;
     width: 250px;
     height: 100%;
-    background: #B5D9E8;
+    background: rgb(181, 217, 232, 0.7);
     align-items: center;
     padding: 15px;
-    border-right: 1px solid rgb(52, 52, 206);
+    border-right: 1px solid rgb(52, 52, 206, 0.7);
 }
 main {
     margin-left: 300px;
@@ -115,7 +117,6 @@ h2{
     margin-left: 30%
 }
 h4{
-    
     margin-right: 33%;
     margin-left: 33%;
     display: flex;
@@ -127,4 +128,26 @@ h4{
 }
 .add-character-text{
     font-size: 25px;
+}
+#like-button{
+    position: relative;
+    border: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    color: whitesmoke;
+    font-size: 19px;
+    justify-self: center;
+    background: url("Mickey.png");
+    background-size: 100%;
+}
+#dislike-button{
+    position: relative;
+    border: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    color: whitesmoke;
+    font-size: 19px;
+    justify-self: center;
+    background: url("Malificent.png");
+    background-size: 100%;
 }
