@@ -118,10 +118,7 @@ function handleNewCharForm() {
       body: JSON.stringify(newChar)
       })
       .then(res => res.json())
-      .then(char => console.log(char))
-
-    renCharCard(newChar)
-    
+      .then(char => renCharCard(char))
   })
   }
 
@@ -143,7 +140,6 @@ function toggleMedia() {
     }
   });
 }
-
 
 handleNewCharForm();
 toggleMedia();

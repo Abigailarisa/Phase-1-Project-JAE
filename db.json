@@ -7,7 +7,7 @@
     },
     {
       "id": 6447,
-      "likes": 0,
+      "likes": 3,
       "dislikes": 0
     },
     {
@@ -34,16 +34,6 @@
       "id": 6452,
       "likes": 0,
       "dislikes": 0
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "likes": 0,
-      "dislikes": 0,
-      "films": [],
-      "tvShows": [],
-      "videoGames": [],
-      "id": 6454
     }
   ]
 }
