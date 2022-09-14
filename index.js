@@ -6,7 +6,7 @@ const likesCount = document.querySelector("#like-count");
 const dislikesCount = document.querySelector("#dislike-count");
 const charCard = document.querySelector("#character-info");
 const toggleButton = document.querySelector("#anime-or-live-action");
-const h2 = document.querySelector('#test');
+const h2 = document.querySelector('#media');
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
@@ -28,7 +28,6 @@ function renCharCard(char){
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
-<<<<<<< HEAD
     const characterObj = {
       name: char.name,
       image: char.imageUrl,
@@ -46,25 +45,8 @@ function renCharCard(char){
       likesCount.textContent = characterObj.likes;
       dislikesCount.textContent = characterObj.dislikes;
     });
-  });
-=======
-        const characterObj = {
-        likes: 0,
-        dislikes: 0,
-        films: char.films,
-        tvShows: char.tvShows,
-        videoGames: char.videoGames,
-        };
-        spanName.addEventListener("click", () => {
-        charName.textContent = char.name;
-        imgObj.src = char.imageUrl;
-        imgObj.style.display = 'none';
-        imgObj.style.display = '';
-        likesCount.textContent = characterObj.likes;
-        dislikesCount.textContent = characterObj.dislikes;
-        });
->>>>>>> 9cdd723dd3e7d0cdecc257b3a717d0347318b3d7
-}
+  }
+
 
 function handleLikes() {
   voteLikes.addEventListener("click", () => {
