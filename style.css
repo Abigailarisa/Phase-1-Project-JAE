@@ -15,6 +15,7 @@ body {
     align-items: center;
     padding: 15px;
     border-right: 1px solid rgb(52, 52, 206);
+    font-size: 25px;
 }
 main {
     margin-left: 300px;
@@ -36,15 +37,19 @@ main {
 #character-image {
     max-height: 20%;
     max-width: 20%;
+    margin-left: 40%
+
 }
 
 #dislike-count{
     font-size: 30px;
-    color: red
+    color: red;
+    margin-left: 46%
 }
 #like-count{
     font-size: 30px;
-    color: rgb(0, 146, 0)
+    color: rgb(0, 146, 0);
+    margin-left: 46%
 }
 
 img{
@@ -155,5 +160,9 @@ h4{
     background-size: 100%;
 }
 h1 {
-    color: white
+    color: white;
+    margin-left: 38%
+}
+#filter-div{
+    margin-left: 44%
 }
