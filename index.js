@@ -40,7 +40,6 @@ function renCharCard(char){
       tvShows: char.tvShows,
       videoGames: char.videoGames,
     };
-    console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
       imgObj.src = char.imageUrl;
@@ -53,7 +52,6 @@ function renCharCard(char){
       videoGame.textContent = characterObj.videoGames.join(', ');
     });
   }
-
 
 function handleLikes() {
   voteLikes.addEventListener("click", () => {
@@ -78,10 +76,25 @@ function handleNewCharForm() {
       image: newImg,
       likes: 0,
       dislikes: 0,
+      films: [],
+      tvShows: [],
+      videoGames: []
     };
+    
+    fetch('http://localhost:3000/characters',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+         Accept: "application/json"
+       },
+      body: JSON.stringify(newChar)
+      })
+      .then(res => res.json())
+      .then(char => console.log(char))
+
     renCharCard(newChar)
-  });
-}
+  })
+  }
 
 toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
@@ -101,6 +114,7 @@ function toggleMedia() {
     }
   });
 }
+
 handleLikes();
 handleDislikes();
 handleNewCharForm();
