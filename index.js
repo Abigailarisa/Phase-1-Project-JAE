@@ -28,26 +28,6 @@ function renCharCard(char){
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
-<<<<<<< HEAD
-    const characterObj = {
-      name: char.name,
-      image: char.imageUrl,
-      likes: 0,
-      dislikes: 0,
-      films: char.films,
-      tvShows: char.tvShows,
-      videoGames: char.videoGames,
-    };
-    spanName.addEventListener("click", () => {
-      charName.textContent = characterObj.name;
-      imgObj.src = characterObj.image;
-      imgObj.style.display = 'none';
-      imgObj.style.display = '';
-      likesCount.textContent = characterObj.likes;
-      dislikesCount.textContent = characterObj.dislikes;
-    });
-  });
-=======
         const characterObj = {
         likes: 0,
         dislikes: 0,
@@ -63,7 +43,6 @@ function renCharCard(char){
         likesCount.textContent = characterObj.likes;
         dislikesCount.textContent = characterObj.dislikes;
         });
->>>>>>> 9cdd723dd3e7d0cdecc257b3a717d0347318b3d7
 }
 
 function handleLikes() {
