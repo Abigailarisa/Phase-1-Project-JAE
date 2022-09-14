@@ -95,6 +95,7 @@ header{
     align-items: center;
     border-radius: 3em;
     border: 1px solid rgb(255, 255, 255);
+    color: whitesmoke
   }
 #character-image {
     max-height: 20%;
@@ -114,7 +115,8 @@ h2{
     margin-left: 30%
 }
 .media-title{
-    margin-left: 30%
+    margin-left: 30%;
+    color: white
 }
 h4{
     margin-right: 33%;
@@ -127,7 +129,8 @@ h4{
 
 }
 .add-character-text{
-    font-size: 25px;
+    font-size: 22px;
+    color: white; 
 }
 #like-button{
     position: relative;
@@ -150,4 +153,7 @@ h4{
     justify-self: center;
     background: url("Malificent.png");
     background-size: 100%;
+}
+h1 {
+    color: white
 }

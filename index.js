@@ -23,7 +23,7 @@ fetch("https://api.disneyapi.dev/characters?page=128")
 function renChar(chars) {
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
-    renCharCard(char);
+    renCharCard(char); 
   });   
 }
 
@@ -51,7 +51,10 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
-    });
+
+      handleLikes(characterObj);
+      handleDislikes(characterObj);
+    }); 
   }
 
 
