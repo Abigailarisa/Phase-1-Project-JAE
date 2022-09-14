@@ -1,23 +1,16 @@
+
 const charName = document.querySelector("#char-name");
 const voteLikes = document.querySelector("#like-button");
 const voteDislikes = document.querySelector("#dislike-button");
 const likesCount = document.querySelector("#like-count");
 const dislikesCount = document.querySelector("#dislike-count");
 const charCard = document.querySelector("#character-info");
-const filterButton = document.querySelector("#anime-or-live-action");
+const toggleButton = document.querySelector("#anime-or-live-action");
 const h2 = document.querySelector('#test');
 const imgObj = document.createElement("img");
-const media = document.createElement("span");
-media.id = "media-name";
 imgObj.id = "character-image";
-charCard.append(imgObj, media);
-filterButton.addEventListener('click', () => {
-    if (h2.style.display !== 'none') {
-        h2.style.display = 'none'
-    } else {
-        h2.style.display = ''
-    }
-})
+charCard.append(imgObj);
+
 
 fetch("https://api.disneyapi.dev/characters?page=128")
   .then((res) => res.json())
@@ -25,6 +18,7 @@ fetch("https://api.disneyapi.dev/characters?page=128")
 
 function renChar(chars) {
     console.log(chars)
+    //console.log(chars)
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
     const charBar = document.querySelector("#character-bar");
@@ -49,7 +43,6 @@ function renChar(chars) {
       dislikesCount.textContent = characterObj.dislikes;
     });
   });
-
 }
 
 function handleLikes() {
@@ -77,17 +70,23 @@ function handleNewCharForm() {
       dislikes: 0,
     };
     // console.log(newName)
-    renderCharacters(newChar);
+    renChar(newChar);
   });
 }
 
-function filterChar(characterObj) {
+toggleButton.addEventListener('click', () => {
+    if (h2.style.display !== 'none') {
+        h2.style.display = 'none'
+    } else {
+        h2.style.display = ''
+    }
+})
+
+function toggleMedia() {
   const filterButton = document.querySelector("#anime-or-live-action");
   filterButton.addEventListener("click", () => {
     if (filterButton.textContent === "Filter Off") {
       filterButton.textContent = "Filter On";
-      //console.log(characterObj)
-      return (media.textContent = characterObj.films);
     } else {
       filterButton.textContent = "Filter Off";
     }
@@ -96,3 +95,4 @@ function filterChar(characterObj) {
 handleLikes();
 handleDislikes();
 handleNewCharForm();
+toggleMedia();
