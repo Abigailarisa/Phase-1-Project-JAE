@@ -33,17 +33,17 @@ function renCharCard(char){
     spanName.textContent = char.name;
     charBar.append(spanName);
     const characterObj = {
-      name: char.name,
-      image: char.imageUrl,
+      id: char._id,
       likes: 0,
       dislikes: 0,
       films: char.films,
       tvShows: char.tvShows,
       videoGames: char.videoGames,
     };
+    console.log(characterObj.id)
     spanName.addEventListener("click", () => {
-      charName.textContent = characterObj.name;
-      imgObj.src = characterObj.image;
+      charName.textContent = char.name;
+      imgObj.src = char.imageUrl;
       imgObj.style.display = 'none';
       imgObj.style.display = '';
       likesCount.textContent = characterObj.likes;
