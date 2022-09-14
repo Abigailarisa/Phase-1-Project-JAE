@@ -20,13 +20,14 @@ fetch("https://api.disneyapi.dev/characters?page=128")
   .then((res) => res.json())
   .then((char) => renChar(char));
 
-// fetch("http://localhost:3000/characters")
-//   .then((res) => res.json())
-//   .then( char => {
-//     handleLikes(char)
-//     handleDislikes(char)
-//     renCharCard(char)
-//   })
+fetch("http://localhost:3000/characters")
+  .then((res) => res.json())
+  .then(char => {
+    // handleLikes(char)
+    // handleDislikes(char)
+    handleNewCharForm(char)
+    console.log(char)
+  })
 
 function renChar(chars) {
   const charSlice = chars.data.slice(8, 15);
