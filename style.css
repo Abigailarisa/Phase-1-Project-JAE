@@ -105,6 +105,7 @@ header{
 #character-image {
     max-height: 20%;
     max-width: 20%;
+    border-radius: 1em;
 }
 .inner-text{
     font-size: 15px;
@@ -121,8 +122,13 @@ h2{
     padding-left: 10%;
 }
 .media-title{
-    margin-left: 30%;
+    margin-left: 28%;
     color: white;
+    border: 1px solid rgb(255, 255, 255);
+    width: 400px;
+    border-radius: .8em;
+    padding: 15pt;
+    box-shadow: 5pt 6px rgba(161, 183, 251, 0.8);
 }
 h4{
     margin-right: 34%;
@@ -130,8 +136,9 @@ h4{
     align-items: center;
     line-height: 0.9;
     width: 200px;
-    border:1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: .8em;
+    box-shadow: 5pt 6px rgba(161, 183, 251, 0.8);
     padding: 10pt;
 }
 #character-info{
