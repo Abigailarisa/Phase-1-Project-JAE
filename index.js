@@ -6,7 +6,7 @@ const likesCount = document.querySelector("#like-count");
 const dislikesCount = document.querySelector("#dislike-count");
 const charCard = document.querySelector("#character-info");
 const toggleButton = document.querySelector("#anime-or-live-action");
-const h2 = document.querySelector('#media');
+const media = document.querySelector('.media-title');
 const movie = document.querySelector("#movie");
 const tv = document.querySelector("#tv-shows");
 const videoGame = document.querySelector("#video-games");
@@ -84,10 +84,10 @@ function handleNewCharForm() {
 }
 
 toggleButton.addEventListener('click', () => {
-    if (h2.style.display !== 'none') {
-        h2.style.display = 'none'
+    if (media.style.display !== 'none') {
+        media.style.display = 'none'
     } else {
-        h2.style.display = ''
+        media.style.display = ''
     }
 })
 
