@@ -103,13 +103,16 @@ h2{
     margin-left: 30%
 }
 h4{
-    background: blue;
-    margin-right: 30%;
-    margin-left: 30%;
+    background: rgb(156, 156, 246);
+    margin-right: 33%;
+    margin-left: 33%;
     display: flex;
     align-items: center
 }
 #character-info{
     align-items: center;
 
+}
+.add-character-text{
+    font-size: 25px;
 }
