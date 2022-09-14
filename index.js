@@ -94,10 +94,10 @@ toggleButton.addEventListener('click', () => {
 function toggleMedia() {
   const filterButton = document.querySelector("#anime-or-live-action");
   filterButton.addEventListener("click", () => {
-    if (filterButton.textContent === "Filter Off") {
-      filterButton.textContent = "Filter On";
+    if (filterButton.textContent === "Less Information") {
+      filterButton.textContent = "More Information ";
     } else {
-      filterButton.textContent = "Filter Off";
+      filterButton.textContent = "Less Information";
     }
   });
 }
