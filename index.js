@@ -17,14 +17,18 @@ fetch("https://api.disneyapi.dev/characters?page=128")
   .then((char) => renChar(char));
 
 function renChar(chars) {
-    console.log(chars)
-    //console.log(chars)
   const charSlice = chars.data.slice(8, 15);
   charSlice.forEach((char) => {
+    renCharCard(char);
+  });   
+}
+
+function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
+<<<<<<< HEAD
     const characterObj = {
       name: char.name,
       image: char.imageUrl,
@@ -43,6 +47,23 @@ function renChar(chars) {
       dislikesCount.textContent = characterObj.dislikes;
     });
   });
+=======
+        const characterObj = {
+        likes: 0,
+        dislikes: 0,
+        films: char.films,
+        tvShows: char.tvShows,
+        videoGames: char.videoGames,
+        };
+        spanName.addEventListener("click", () => {
+        charName.textContent = char.name;
+        imgObj.src = char.imageUrl;
+        imgObj.style.display = 'none';
+        imgObj.style.display = '';
+        likesCount.textContent = characterObj.likes;
+        dislikesCount.textContent = characterObj.dislikes;
+        });
+>>>>>>> 9cdd723dd3e7d0cdecc257b3a717d0347318b3d7
 }
 
 function handleLikes() {
@@ -69,8 +90,7 @@ function handleNewCharForm() {
       likes: 0,
       dislikes: 0,
     };
-    // console.log(newName)
-    renChar(newChar);
+    renCharCard(newChar)
   });
 }
 
