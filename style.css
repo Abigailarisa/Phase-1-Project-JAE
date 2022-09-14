@@ -44,12 +44,12 @@ main {
 #dislike-count{
     font-size: 30px;
     color: red;
-    margin-left: 45%
+    margin-left: 46%
 }
 #like-count{
     font-size: 30px;
     color: rgb(0, 146, 0);
-    margin-left: 45%
+    margin-left: 46%
 }
 
 img{
@@ -161,8 +161,8 @@ h4{
 }
 h1 {
     color: white;
-    margin-left: 30%
+    margin-left: 38%
 }
 #filter-div{
-    margin-left: 45%
+    margin-left: 44%
 }
