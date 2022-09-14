@@ -48,9 +48,9 @@ function renCharCard(char){
       imgObj.style.display = '';
       likesCount.textContent = characterObj.likes;
       dislikesCount.textContent = characterObj.dislikes;
-      movie.textContent = characterObj.films;
-      tv.textContent = characterObj.tvShows;
-      videoGame.textContent = characterObj.videoGames;
+      movie.textContent = characterObj.films.join(', ');
+      tv.textContent = characterObj.tvShows.join(', ');
+      videoGame.textContent = characterObj.videoGames.join(', ');
     });
   }
 
