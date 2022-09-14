@@ -50,18 +50,46 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
+
+      handleLikes(characterObj);
+      handleDislikes(characterObj);
     });
   }
 
-function handleLikes() {
+function handleLikes(char) {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
+
+    fetch(`http://localhost:3000/characters/${char.id}`,{
+      method: 'PATCH', 
+      headers:{
+        'Content-Type': 'application/json',
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        likes: parseInt(likesCount.textContent)
+      })
+    })
+    .then(res => res.json)
+    .then(likes => console.log(likes))
   });
 }
 
-function handleDislikes() {
+function handleDislikes(char) {
   voteDislikes.addEventListener("click", () => {
     dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
+    fetch(`http://localhost:3000/characters/${char.id}`,{
+      method: 'PATCH', 
+      headers:{
+        'Content-Type': 'application/json',
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        dislikes: parseInt(dislikesCount.textContent)
+      })
+    })
+    .then(res => res.json)
+    .then(dislikes => console.log(dislikes))
   });
 }
 
@@ -93,6 +121,7 @@ function handleNewCharForm() {
       .then(char => console.log(char))
 
     renCharCard(newChar)
+    
   })
   }
 
@@ -115,7 +144,6 @@ function toggleMedia() {
   });
 }
 
-handleLikes();
-handleDislikes();
+
 handleNewCharForm();
 toggleMedia();

@@ -12,8 +12,8 @@
     },
     {
       "id": 6448,
-      "likes": 0,
-      "dislikes": 0
+      "likes": 1,
+      "dislikes": -1
     },
     {
       "id": 6449,
@@ -34,13 +34,6 @@
       "id": 6452,
       "likes": 0,
       "dislikes": 0
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "likes": 0,
-      "dislikes": 0,
-      "id": 6453
     },
     {
       "name": "test",
