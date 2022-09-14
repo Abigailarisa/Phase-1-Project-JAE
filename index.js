@@ -47,6 +47,7 @@ function renCharCard(char){
       films: char.films,
       tvShows: char.tvShows,
       videoGames: char.videoGames,
+      userNostalgia: []
     };
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
@@ -58,6 +59,8 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
+      nostalgia.textContent = characterObj.userNostalgia;
+
 
       // handleLikes(characterObj);
       // handleDislikes(characterObj);
@@ -108,16 +111,22 @@ function handleNewCharForm() {
     e.preventDefault();
     const newName = e.target["name"].value;
     const newImg = e.target["image-url"].value;
+    const newFilm = e.target["character-movies"].value;
+    const newShow = e.target["character-shows"].value;
+    const newGame = e.target["character-game"].value;
+    const newNostalgia = e.target["comment"].value;
     let newChar = {
       name: newName,
       image: newImg,
       likes: 0,
       dislikes: 0,
-      films: [],
-      tvShows: [],
-      videoGames: []
+      films: [newFilm],
+      tvShows: [newShow],
+      videoGames: [newGame],
+      userNostalgia: [newNostalgia],
     };
     renCharCard(newChar)
+    e.target.reset()
     // fetch('http://localhost:3000/characters',{
     //   method: 'POST',
     //   headers:{
