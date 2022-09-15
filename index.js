@@ -117,7 +117,7 @@ function handleNewCharForm() {
     const newNostalgia = e.target["comment"].value;
     let newChar = {
       name: newName,
-      image: newImg,
+      imageUrl: newImg,
       likes: 0,
       dislikes: 0,
       films: [newFilm],
