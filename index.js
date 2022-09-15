@@ -1,3 +1,13 @@
+fetch("https://api.disneyapi.dev/characters?page=128")
+  .then((res) => res.json())
+  .then((char) => renChar(char));
+
+fetch("http://localhost:3000/characters")
+  .then((res) => res.json())
+  .then(char => {
+    renderCharLocalApi(char)
+    console.log(char)
+  })
 
 const charName = document.querySelector("#char-name");
 const voteLikes = document.querySelector("#like-button");
@@ -14,18 +24,6 @@ const videoGame = document.querySelector("#video-games");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
-
-
-fetch("https://api.disneyapi.dev/characters?page=128")
-  .then((res) => res.json())
-  .then((char) => renChar(char));
-
-fetch("http://localhost:3000/characters")
-  .then((res) => res.json())
-  .then(char => {
-    renderCharLocalApi(char)
-    console.log(char)
-  })
 
 function renChar(chars) {
   const charSlice = chars.data.slice(10, 15);
@@ -65,7 +63,6 @@ function renCharCard(char){
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
       //nostalgia.textContent = characterObj.userNostalgia;
-
 
       // handleLikes(characterObj);
       // handleDislikes(characterObj);
@@ -142,9 +139,18 @@ function handleNewCharForm() {
       body: JSON.stringify(newChar)
       })
       .then(res => res.json())
-      .then(char => console.log(char))
+      //.then(char => console.log(char))
   })
   }
+
+function toggleMedia() {
+  toggleButton.addEventListener("click", () => {
+    if (toggleButton.textContent === "Less Information") {
+      toggleButton.textContent = "More Information ";
+    } else {
+      toggleButton.textContent = "Less Information";
+    }
+  });
 
 toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
@@ -153,17 +159,8 @@ toggleButton.addEventListener('click', () => {
         media.style.display = ''
     }
 })
-
-function toggleMedia() {
-  const infoButton = document.querySelector("#anime-or-live-action");
-  infoButton.addEventListener("click", () => {
-    if (infoButton.textContent === "Less Information") {
-      infoButton.textContent = "More Information ";
-    } else {
-      infoButton.textContent = "Less Information";
-    }
-  });
 }
+
 handleDislikes();
 handleLikes();
 handleNewCharForm();
