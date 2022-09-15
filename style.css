@@ -3,67 +3,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 300px;
-
 }
 #character-bar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background: #B5D9E8;
-    align-items: center;
-    padding: 15px;
-    border-right: 1px solid rgb(52, 52, 206);
-    font-size: 25px;
-}
-main {
-    margin-left: 300px;
-    padding: 10px;
-
-}
-#character-summary-container {
-    background: white;
-    padding: 5px;
-}
-#character-bar span {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3em;
-    border: 1px solid rgb(255, 255, 255);
-  }
-#character-image {
-    max-height: 20%;
-    max-width: 20%;
-    margin-left: 40%
-}
-#span-image {
-    max-height: 30%;
-    max-width: 30%;
-    border-radius: 3em;
-}
-
-#dislike-count{
-    font-size: 30px;
-    color: red;
-    margin-left: 36%;
-}
-#like-count{
-    font-size: 30px;
-    color: rgb(0, 146, 0);
-    margin-left: 36%;
-}
-
-img{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-#character-bar{
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 250px;
@@ -72,11 +14,76 @@ img{
     align-items: center;
     padding: 15px;
     border-right: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 25px;
 }
 main {
     margin-left: 300px;
     padding: 10px;
 
+}
+#character-bar span {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3em;
+    border: 1px solid rgb(255, 255, 255);
+    font-weight: bolder;
+    letter-spacing: 0.8pt;
+    color: whitesmoke;
+    box-shadow: 5pt 6px rgba(128, 159, 250, 0.8);
+    margin-bottom: 1rem;
+    padding-block: 20px;
+  }
+#span-image {
+    max-height: 50%;
+    max-width: 50%;
+    border-radius: 3em;
+}
+#character-image {
+    max-height: 20%;
+    max-width: 200px;
+    border-radius: 1em;
+    margin-bottom: 1rem;   
+}
+#dislike-count{
+    font-size: 30px;
+    color: red;
+    margin-left: 36%;
+}
+#dislike-button{
+    position: relative;
+    border: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    color: whitesmoke;
+    font-size: 19px;
+    justify-self: center;
+    background: url("Malificent.png");
+    background-size: 100%;
+    padding-bottom: 8pt;
+}
+#like-count{
+    font-size: 30px;
+    color: rgb(0, 146, 0);
+    margin-left: 36%;
+}
+#like-button{
+    position: relative;
+    border: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    color: whitesmoke;
+    justify-self: center;
+    background: url("Mickey.png");
+    background-size: 100%;
+    padding-bottom: 8pt;
+}
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 #character-summary-container {
     background: rgba(175, 180, 250, 0.7);
@@ -91,25 +98,6 @@ header{
     padding: 5px;
     margin-right: 35%;
 }
-#character-bar span {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3em;
-    border: 1px solid rgb(255, 255, 255);
-    font-weight: bolder;
-    letter-spacing: 0.8pt;
-    color: whitesmoke;
-    box-shadow: 5pt 6px rgba(128, 159, 250, 0.8);
-    margin-bottom: 1rem;
-  }
-#character-image {
-    max-height: 20%;
-    max-width: 200px;
-    border-radius: 1em;
-    margin-bottom: 1rem;   
-}
 .inner-text{
     font-size: 15px;
     margin-right: 50%;
@@ -117,7 +105,6 @@ header{
 .media-name{
     font-size: 16pt;
 }
-
 h2{
     font-size: 20pt;
     margin-right: 30%;
@@ -152,29 +139,6 @@ h4{
     font-size: 22px;
     color: white; 
 }
-#like-button{
-    position: relative;
-    border: none;
-    height: 3.5rem;
-    width: 3.5rem;
-    color: whitesmoke;
-    justify-self: center;
-    background: url("Mickey.png");
-    background-size: 100%;
-    padding-bottom: 8pt;
-}
-#dislike-button{
-    position: relative;
-    border: none;
-    height: 3.5rem;
-    width: 3.5rem;
-    color: whitesmoke;
-    font-size: 19px;
-    justify-self: center;
-    background: url("Malificent.png");
-    background-size: 100%;
-    padding-bottom: 8pt;
-}
 .vote-buttons{
     margin-left: 36%;
     position: relative;
@@ -184,7 +148,6 @@ h4{
     box-shadow: 5pt 6px rgba(128, 159, 250, 0.8);
     padding: 10pt;
 }
-
 h1 {
     color: white;
     margin-left: 30%;
