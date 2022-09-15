@@ -41,8 +41,13 @@ function renderCharLocalApi(chars){
 function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
+    const spanImg = document.createElement("img");
+    spanImg.id = "span-image";
     spanName.textContent = char.name;
+    spanImg.src = char.imageUrl;
+    console.log(char.imageUrl)
     charBar.append(spanName);
+    spanName.append(spanImg);
     
     const characterObj = {
       id: char.id,
