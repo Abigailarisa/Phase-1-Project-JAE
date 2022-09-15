@@ -72,8 +72,6 @@ function renCharCard(char){
 function handleLikes() {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
-<<<<<<< HEAD
-=======
 
     // fetch(`http://localhost:3000/characters/${char.id}`,{
     //   method: 'PATCH', 
@@ -87,15 +85,12 @@ function handleLikes() {
     // })
     // .then(res => res.json())
     // .then(likes => console.log(likes))
->>>>>>> bf9d7a96dc05c74ba5e3d7ed373314506b10e242
   });
 }
 
 function handleDislikes() {
   voteDislikes.addEventListener("click", () => {
     dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
-<<<<<<< HEAD
-=======
 
     // fetch(`http://localhost:3000/characters/${char.id}`,{
     //   method: 'PATCH', 
@@ -109,7 +104,6 @@ function handleDislikes() {
     // })
     // .then(res => res.json())
     // .then(dislikes => console.log(dislikes))
->>>>>>> bf9d7a96dc05c74ba5e3d7ed373314506b10e242
   });
 }
 
@@ -128,12 +122,6 @@ function handleNewCharForm() {
       imageUrl: newImg,
       likes: 0,
       dislikes: 0,
-<<<<<<< HEAD
-    };
-    renCharCard(newChar)
-  });
-}
-=======
       films: [newFilm],
       tvShows: [newShow],
       videoGames: [newGame],
@@ -153,7 +141,6 @@ function handleNewCharForm() {
     //   .then(char => renCharCard(char))
   })
   }
->>>>>>> bf9d7a96dc05c74ba5e3d7ed373314506b10e242
 
 toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
@@ -173,12 +160,7 @@ function toggleMedia() {
     }
   });
 }
-<<<<<<< HEAD
-handleLikes();
-handleDislikes();
-=======
 handleDislikes();
 handleLikes();
->>>>>>> bf9d7a96dc05c74ba5e3d7ed373314506b10e242
 handleNewCharForm();
 toggleMedia();
