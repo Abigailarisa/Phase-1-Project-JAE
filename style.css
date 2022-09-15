@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://www.kennythepirate.com/wp-content/uploads/2021/10/Crop-for-Feature.jpg");
+    background-image: url("Disney\ image\ cropped\ 2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 300px;
@@ -57,14 +57,6 @@ img{
     margin-left: auto;
     margin-right: auto;
     position: relative;
-}
-
-body {
-    background-image: url("Disney image cropped .jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: 300px;
-
 }
 #character-bar{
     position: fixed;
