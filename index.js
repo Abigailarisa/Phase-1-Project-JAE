@@ -20,13 +20,14 @@ fetch("https://api.disneyapi.dev/characters?page=128")
   .then((res) => res.json())
   .then((char) => renChar(char));
 
-// fetch("http://localhost:3000/characters")
-//   .then((res) => res.json())
-//   .then( char => {
-//     handleLikes(char)
-//     handleDislikes(char)
-//     renCharCard(char)
-//   })
+fetch("http://localhost:3000/characters")
+  .then((res) => res.json())
+  .then(char => {
+    // handleLikes(char)
+    // handleDislikes(char)
+    handleNewCharForm(char)
+    console.log(char)
+  })
 
 function renChar(chars) {
   const charSlice = chars.data.slice(8, 15);
@@ -42,6 +43,7 @@ function renCharCard(char){
     charBar.append(spanName);
     const characterObj = {
       id: char._id,
+      image: char.imageUrl,
       likes: 0,
       dislikes: 0,
       films: char.films,
@@ -52,9 +54,7 @@ function renCharCard(char){
     console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
-      imgObj.src = char.imageUrl;
-      imgObj.style.display = 'none';
-      imgObj.style.display = '';
+      imgObj.src = characterObj.image;
       likesCount.textContent = characterObj.likes;
       dislikesCount.textContent = characterObj.dislikes;
       movie.textContent = characterObj.films.join(', ');
@@ -125,7 +125,7 @@ function handleNewCharForm() {
     const newNostalgia = e.target["comment"].value;
     let newChar = {
       name: newName,
-      image: newImg,
+      imageUrl: newImg,
       likes: 0,
       dislikes: 0,
 <<<<<<< HEAD
