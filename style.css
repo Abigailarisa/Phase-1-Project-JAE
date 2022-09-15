@@ -36,6 +36,9 @@ main {
     margin-bottom: 1rem;
     padding-block: 5px;
   }
+#character-bar span:hover {
+    opacity: .7;
+}
 #span-image {
     margin-bottom: 5px;
     max-height: 50%;
@@ -66,6 +69,9 @@ main {
     background-size: 100%;
     padding-bottom: 8pt;
 }
+#dislike-button:hover {
+    opacity: .6;
+}
 #like-count{
     font-size: 30px;
     color: rgb(0, 146, 0);
@@ -81,6 +87,10 @@ main {
     background: url("Mickey.png");
     background-size: 100%;
     padding-bottom: 8pt;
+}
+#like-button:hover {
+    opacity: .6;
+
 }
 img{
     display:block;
@@ -159,7 +169,7 @@ h1 {
     text-align: center;
     position: relative
 }
-#filter-div{
+#toggle-div{
     margin-left: 8%
 }
 .add-char-container{
@@ -176,4 +186,8 @@ h1 {
     margin-left: 12%;
     margin-top: 0.8%;
     padding: 4pt;
+}
+.button:hover{
+    background-color: white;
+    color: rgb(118, 213, 245);
 }
