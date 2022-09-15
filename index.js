@@ -59,6 +59,7 @@ function renCharCard(char){
       videoGames: char.videoGames,
      // userNostalgia: []
     };
+    console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
       imgObj.src = characterObj.image;
