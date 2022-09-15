@@ -23,9 +23,7 @@ fetch("https://api.disneyapi.dev/characters?page=128")
 fetch("http://localhost:3000/characters")
   .then((res) => res.json())
   .then(char => {
-    // handleLikes(char)
-    // handleDislikes(char)
-    handleNewCharForm(char)
+    renderCharLocalApi(char)
     console.log(char)
   })
 
@@ -36,13 +34,20 @@ function renChar(chars) {
   });   
 }
 
+function renderCharLocalApi(char){
+  char.forEach((char) => {
+    renCharCard(char); 
+  });   
+}
+
 function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
     spanName.textContent = char.name;
     charBar.append(spanName);
+    
     const characterObj = {
-      id: char._id,
+      id: char.id,
       image: char.imageUrl,
       likes: 0,
       dislikes: 0,
@@ -62,7 +67,7 @@ function renCharCard(char){
       nostalgia.textContent = characterObj.userNostalgia;
 
 
-      // handleLikes(characterObj);
+      handleLikes(characterObj);
       // handleDislikes(characterObj);
     }); 
   }
@@ -70,19 +75,19 @@ function renCharCard(char){
 function handleLikes(char) {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
-
-    // fetch(`http://localhost:3000/characters/${char.id}`,{
-    //   method: 'PATCH', 
-    //   headers:{
-    //     'Content-Type': 'application/json',
-    //     Accept: "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     likes: parseInt(likesCount.textContent)
-    //   })
-    // })
-    // .then(res => res.json())
-    // .then(likes => console.log(likes))
+    // console.log(char)
+    fetch(`http://localhost:3000/characters/${char.id}`,{
+      method: 'PATCH', 
+      headers:{
+        'Content-Type': 'application/json',
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        likes: parseInt(likesCount.textContent)
+      })
+    })
+    .then(res => res.json())
+    .then(likes => console.log(likes))
   });
 }
 
@@ -127,16 +132,17 @@ function handleNewCharForm() {
     };
     renCharCard(newChar)
     e.target.reset()
-    // fetch('http://localhost:3000/characters',{
-    //   method: 'POST',
-    //   headers:{
-    //     'Content-Type': 'application/json',
-    //      Accept: "application/json"
-    //    },
-    //   body: JSON.stringify(newChar)
-    //   })
-    //   .then(res => res.json())
-    //   .then(char => renCharCard(char))
+
+    fetch('http://localhost:3000/characters',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+         Accept: "application/json"
+       },
+      body: JSON.stringify(newChar)
+      })
+      .then(res => res.json())
+      .then(char => console.log(char))
   })
   }
 
@@ -158,7 +164,7 @@ function toggleMedia() {
     }
   });
 }
-handleDislikes();
-handleLikes();
+// handleDislikes();
+// handleLikes();
 handleNewCharForm();
 toggleMedia();
