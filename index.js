@@ -155,12 +155,12 @@ toggleButton.addEventListener('click', () => {
 })
 
 function toggleMedia() {
-  const filterButton = document.querySelector("#anime-or-live-action");
-  filterButton.addEventListener("click", () => {
-    if (filterButton.textContent === "Less Information") {
-      filterButton.textContent = "More Information ";
+  const infoButton = document.querySelector("#anime-or-live-action");
+  infoButton.addEventListener("click", () => {
+    if (infoButton.textContent === "Less Information") {
+      infoButton.textContent = "More Information ";
     } else {
-      filterButton.textContent = "Less Information";
+      infoButton.textContent = "Less Information";
     }
   });
 }
