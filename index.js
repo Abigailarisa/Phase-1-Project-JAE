@@ -1,3 +1,13 @@
+fetch("https://api.disneyapi.dev/characters?page=128")
+  .then((res) => res.json())
+  .then((char) => renChar(char));
+
+fetch("http://localhost:3000/characters")
+  .then((res) => res.json())
+  .then(char => {
+    renderCharLocalApi(char)
+    console.log(char)
+  })
 
 const charName = document.querySelector("#char-name");
 const voteLikes = document.querySelector("#like-button");
@@ -10,28 +20,20 @@ const media = document.querySelector('.media-title');
 const movie = document.querySelector("#movie");
 const tv = document.querySelector("#tv-shows");
 const videoGame = document.querySelector("#video-games");
-const nostalgia = document.querySelector("#nostalgia");
+//const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
 
-
-fetch("https://api.disneyapi.dev/characters?page=128")
-  .then((res) => res.json())
-  .then((char) => renChar(char));
-
-fetch("http://localhost:3000/characters")
-  .then((res) => res.json())
-  .then(char => {
-    // handleLikes(char)
-    // handleDislikes(char)
-    handleNewCharForm(char)
-    console.log(char)
-  })
-
 function renChar(chars) {
-  const charSlice = chars.data.slice(8, 15);
+  const charSlice = chars.data.slice(10, 15);
   charSlice.forEach((char) => {
+    renCharCard(char); 
+  });   
+}
+
+function renderCharLocalApi(chars){
+  chars.forEach((char) => {
     renCharCard(char); 
   });   
 }
@@ -39,17 +41,23 @@ function renChar(chars) {
 function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
+    const spanImg = document.createElement("img");
+    spanImg.id = "span-image";
     spanName.textContent = char.name;
+    spanImg.src = char.imageUrl;
+    console.log(char.imageUrl)
     charBar.append(spanName);
+    spanName.append(spanImg);
+    
     const characterObj = {
-      id: char._id,
+      id: char.id,
       image: char.imageUrl,
       likes: 0,
       dislikes: 0,
       films: char.films,
       tvShows: char.tvShows,
       videoGames: char.videoGames,
-      userNostalgia: []
+     // userNostalgia: []
     };
     console.log(characterObj.id)
     spanName.addEventListener("click", () => {
@@ -60,19 +68,17 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
-      nostalgia.textContent = characterObj.userNostalgia;
-
+      //nostalgia.textContent = characterObj.userNostalgia;
 
       // handleLikes(characterObj);
       // handleDislikes(characterObj);
     }); 
   }
 
-
 function handleLikes() {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
-
+    // console.log(char)
     // fetch(`http://localhost:3000/characters/${char.id}`,{
     //   method: 'PATCH', 
     //   headers:{
@@ -116,7 +122,7 @@ function handleNewCharForm() {
     const newFilm = e.target["character-movies"].value;
     const newShow = e.target["character-shows"].value;
     const newGame = e.target["character-game"].value;
-    const newNostalgia = e.target["comment"].value;
+    //const newNostalgia = e.target["comment"].value;
     let newChar = {
       name: newName,
       imageUrl: newImg,
@@ -125,22 +131,32 @@ function handleNewCharForm() {
       films: [newFilm],
       tvShows: [newShow],
       videoGames: [newGame],
-      userNostalgia: [newNostalgia],
+      //userNostalgia: [newNostalgia],
     };
     renCharCard(newChar)
     e.target.reset()
-    // fetch('http://localhost:3000/characters',{
-    //   method: 'POST',
-    //   headers:{
-    //     'Content-Type': 'application/json',
-    //      Accept: "application/json"
-    //    },
-    //   body: JSON.stringify(newChar)
-    //   })
-    //   .then(res => res.json())
-    //   .then(char => renCharCard(char))
+
+    fetch('http://localhost:3000/characters',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+         Accept: "application/json"
+       },
+      body: JSON.stringify(newChar)
+      })
+      .then(res => res.json())
+      //.then(char => console.log(char))
   })
   }
+
+function toggleMedia() {
+  toggleButton.addEventListener("click", () => {
+    if (toggleButton.textContent === "Less Information") {
+      toggleButton.textContent = "More Information ";
+    } else {
+      toggleButton.textContent = "Less Information";
+    }
+  });
 
 toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
@@ -149,17 +165,8 @@ toggleButton.addEventListener('click', () => {
         media.style.display = ''
     }
 })
-
-function toggleMedia() {
-  const filterButton = document.querySelector("#anime-or-live-action");
-  filterButton.addEventListener("click", () => {
-    if (filterButton.textContent === "Less Information") {
-      filterButton.textContent = "More Information ";
-    } else {
-      filterButton.textContent = "Less Information";
-    }
-  });
 }
+
 handleDislikes();
 handleLikes();
 handleNewCharForm();
