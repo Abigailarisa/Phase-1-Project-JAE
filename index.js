@@ -10,7 +10,7 @@ const media = document.querySelector('.media-title');
 const movie = document.querySelector("#movie");
 const tv = document.querySelector("#tv-shows");
 const videoGame = document.querySelector("#video-games");
-const nostalgia = document.querySelector("#nostalgia");
+//const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
@@ -28,14 +28,14 @@ fetch("http://localhost:3000/characters")
   })
 
 function renChar(chars) {
-  const charSlice = chars.data.slice(8, 15);
+  const charSlice = chars.data.slice(10, 15);
   charSlice.forEach((char) => {
     renCharCard(char); 
   });   
 }
 
-function renderCharLocalApi(char){
-  char.forEach((char) => {
+function renderCharLocalApi(chars){
+  chars.forEach((char) => {
     renCharCard(char); 
   });   
 }
@@ -54,7 +54,7 @@ function renCharCard(char){
       films: char.films,
       tvShows: char.tvShows,
       videoGames: char.videoGames,
-      userNostalgia: []
+     // userNostalgia: []
     };
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
@@ -64,34 +64,34 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
-      nostalgia.textContent = characterObj.userNostalgia;
+      //nostalgia.textContent = characterObj.userNostalgia;
 
 
-      handleLikes(characterObj);
+      // handleLikes(characterObj);
       // handleDislikes(characterObj);
     }); 
   }
 
-function handleLikes(char) {
+function handleLikes() {
   voteLikes.addEventListener("click", () => {
     likesCount.textContent = parseInt(likesCount.textContent) + 1;
     // console.log(char)
-    fetch(`http://localhost:3000/characters/${char.id}`,{
-      method: 'PATCH', 
-      headers:{
-        'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        likes: parseInt(likesCount.textContent)
-      })
-    })
-    .then(res => res.json())
-    .then(likes => console.log(likes))
+    // fetch(`http://localhost:3000/characters/${char.id}`,{
+    //   method: 'PATCH', 
+    //   headers:{
+    //     'Content-Type': 'application/json',
+    //     Accept: "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     likes: parseInt(likesCount.textContent)
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(likes => console.log(likes))
   });
 }
 
-function handleDislikes(char) {
+function handleDislikes() {
   voteDislikes.addEventListener("click", () => {
     dislikesCount.textContent = parseInt(dislikesCount.textContent) - 1;
 
@@ -119,7 +119,7 @@ function handleNewCharForm() {
     const newFilm = e.target["character-movies"].value;
     const newShow = e.target["character-shows"].value;
     const newGame = e.target["character-game"].value;
-    const newNostalgia = e.target["comment"].value;
+    //const newNostalgia = e.target["comment"].value;
     let newChar = {
       name: newName,
       imageUrl: newImg,
@@ -128,7 +128,7 @@ function handleNewCharForm() {
       films: [newFilm],
       tvShows: [newShow],
       videoGames: [newGame],
-      userNostalgia: [newNostalgia],
+      //userNostalgia: [newNostalgia],
     };
     renCharCard(newChar)
     e.target.reset()
@@ -164,7 +164,7 @@ function toggleMedia() {
     }
   });
 }
-// handleDislikes();
-// handleLikes();
+handleDislikes();
+handleLikes();
 handleNewCharForm();
 toggleMedia();

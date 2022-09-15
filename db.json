@@ -1,23 +1,5 @@
 {
   "characters": [
-    {
-      "name": "Scooby-Doo",
-      "imageUrl": "https://tse4.mm.bing.net/th?id=OIP.gTJsaLQZksIztfNzJtBuvgAAAA&pid=Api&P=0",
-      "likes": 1,
-      "dislikes": 0,
-      "films": [
-        "test"
-      ],
-      "tvShows": [
-        "test"
-      ],
-      "videoGames": [
-        "test"
-      ],
-      "userNostalgia": [
-        "test"
-      ],
-      "id": 1
-    }
+    
   ]
 }
