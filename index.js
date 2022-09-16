@@ -41,7 +41,6 @@ function renCharCard(char){
     spanImg.id = "span-image";
     spanName.textContent = char.name;
     spanImg.src = char.imageUrl;
-    console.log(char.imageUrl)
     charBar.append(spanName);
     spanName.append(spanImg);
     
