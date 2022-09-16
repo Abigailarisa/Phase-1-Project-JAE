@@ -6,7 +6,6 @@ fetch("http://localhost:3000/characters")
   .then((res) => res.json())
   .then(char => {
     renderCharLocalApi(char)
-    console.log(char)
   })
 
 const charName = document.querySelector("#char-name");
@@ -20,7 +19,6 @@ const media = document.querySelector('.media-title');
 const movie = document.querySelector("#movie");
 const tv = document.querySelector("#tv-shows");
 const videoGame = document.querySelector("#video-games");
-//const nostalgia = document.querySelector("#nostalgia");
 const imgObj = document.createElement("img");
 imgObj.id = "character-image";
 charCard.append(imgObj);
@@ -57,8 +55,8 @@ function renCharCard(char){
       films: char.films,
       tvShows: char.tvShows,
       videoGames: char.videoGames,
-     // userNostalgia: []
     };
+
     console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
@@ -68,7 +66,6 @@ function renCharCard(char){
       movie.textContent = characterObj.films.join(', ');
       tv.textContent = characterObj.tvShows.join(', ');
       videoGame.textContent = characterObj.videoGames.join(', ');
-      //nostalgia.textContent = characterObj.userNostalgia;
 
       // handleLikes(characterObj);
       // handleDislikes(characterObj);
@@ -122,7 +119,7 @@ function handleNewCharForm() {
     const newFilm = e.target["character-movies"].value;
     const newShow = e.target["character-shows"].value;
     const newGame = e.target["character-game"].value;
-    //const newNostalgia = e.target["comment"].value;
+    
     let newChar = {
       name: newName,
       imageUrl: newImg,
@@ -131,7 +128,6 @@ function handleNewCharForm() {
       films: [newFilm],
       tvShows: [newShow],
       videoGames: [newGame],
-      //userNostalgia: [newNostalgia],
     };
     renCharCard(newChar)
     e.target.reset()
@@ -145,7 +141,6 @@ function handleNewCharForm() {
       body: JSON.stringify(newChar)
       })
       .then(res => res.json())
-      //.then(char => console.log(char))
   })
   }
 
@@ -158,7 +153,7 @@ function toggleMedia() {
     }
   });
 
-toggleButton.addEventListener('click', () => {
+  toggleButton.addEventListener('click', () => {
     if (media.style.display !== 'none') {
         media.style.display = 'none'
     } else {
