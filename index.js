@@ -29,13 +29,11 @@ function renChar(chars) {
     renCharCard(char); 
   });   
 }
-
 function renderCharLocalApi(chars){
   chars.forEach((char) => {
     renCharCard(char); 
   });   
 }
-
 function renCharCard(char){ 
     const charBar = document.querySelector("#character-bar");
     const spanName = document.createElement("span");
@@ -57,7 +55,6 @@ function renCharCard(char){
       videoGames: char.videoGames,
     };
 
-    console.log(characterObj.id)
     spanName.addEventListener("click", () => {
       charName.textContent = char.name;
       imgObj.src = characterObj.image;
